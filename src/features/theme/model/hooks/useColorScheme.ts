@@ -1,34 +1,27 @@
+import { useEffect, useState } from "react";
 import { useThemeStore } from "../store/themeStore";
-import { useState, useEffect } from "react";
+
+const getSystemColorScheme = (): "light" | "dark" =>
+  window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
 export const useColorScheme = (): "light" | "dark" => {
-  const [colorScheme, setColorScheme] = useState<"light" | "dark">("light");
   const theme = useThemeStore((state) => state.theme);
+  const [systemColorScheme, setSystemColorScheme] =
+    useState<"light" | "dark">(getSystemColorScheme);
 
   useEffect(() => {
+    if (theme !== "auto") return;
+
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    setColorScheme(mediaQuery.matches ? "dark" : "light");
-
     const handleChange = (event: MediaQueryListEvent) => {
-      setColorScheme(event.matches ? "dark" : "light");
+      setSystemColorScheme(event.matches ? "dark" : "light");
     };
-
-    if (theme === "light") {
-      mediaQuery.removeEventListener("change", handleChange);
-      setColorScheme("light");
-      return;
-    } else if (theme === "dark") {
-      mediaQuery.removeEventListener("change", handleChange);
-      setColorScheme("dark");
-      return;
-    }
 
     mediaQuery.addEventListener("change", handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleChange);
-    };
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, [theme]);
 
-  return colorScheme;
+  if (theme === "light") return "light";
+  if (theme === "dark") return "dark";
+  return systemColorScheme;
 };

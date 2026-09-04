@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
+import { useNavigate } from "react-router-dom";
 import { EMAIL_ERROR_MESSAGE, EMAIL_REGEX, PASSWORD_ERROR_MESSAGE } from "../config";
 import { login } from "../api/login";
 import { useAuthStore } from "../store/authStore";
 
 export function useLoginForm() {
   const setAuth = useAuthStore((state) => state.setAuth);
+  const navigate = useNavigate();
   const [inProgress, setInProgress] = useState(false);
 
   const form = useForm({
@@ -26,6 +28,7 @@ export function useLoginForm() {
     try {
       const { token } = await login();
       setAuth(token);
+      navigate("/", { replace: true });
     } finally {
       setInProgress(false);
     }

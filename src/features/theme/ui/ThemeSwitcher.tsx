@@ -1,12 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { cn } from "@/shared/utils";
 import { useThemeStore } from "../model/store/themeStore";
 import { OPTIONS, ICONS, THUMB_POSITION } from "../model/config";
 
-export function ThemeSwitcher() {
+export const ThemeSwitcher = () => {
   const theme = useThemeStore((state) => state.theme);
   const setTheme = useThemeStore((state) => state.setTheme);
+  const { t } = useTranslation();
 
-  const activeIndex = OPTIONS.findIndex((option) => option.value === theme);
+  const activeIndex = OPTIONS.findIndex((option) => option === theme);
 
   return (
     <div className="relative inline-flex items-center rounded-full bg-bg-secondary p-1">
@@ -17,9 +19,10 @@ export function ThemeSwitcher() {
           THUMB_POSITION[activeIndex],
         )}
       />
-      {OPTIONS.map(({ value, label }) => {
+      {OPTIONS.map((value) => {
         const active = theme === value;
         const Icon = ICONS[value];
+        const label = t(`theme.${value}`);
 
         return (
           <button

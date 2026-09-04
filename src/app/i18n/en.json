@@ -1,0 +1,29 @@
+{
+  "theme": {
+    "auto": "Auto",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "lang": {
+    "select": "Language",
+    "ru": "Russian",
+    "en": "English"
+  },
+  "layout": {
+    "logo_alt": "DCUT",
+    "made_by": "Made by Sergei Kapralov"
+  },
+  "auth": {
+    "email": "Email",
+    "email_placeholder": "you@example.com",
+    "password": "Password",
+    "submit": "Sign in",
+    "email_invalid": "Email is not valid",
+    "password_invalid": "Password must be at least 3 characters"
+  },
+  "pages": {
+    "home_title": "first commit",
+    "logged_in": "You are logged in",
+    "logout": "Sign out"
+  }
+}

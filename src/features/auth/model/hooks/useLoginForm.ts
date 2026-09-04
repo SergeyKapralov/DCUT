@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { EMAIL_ERROR_MESSAGE, EMAIL_REGEX, PASSWORD_ERROR_MESSAGE } from "../config";
+import { EMAIL_REGEX } from "../config";
 import { login } from "../api/login";
 import { useAuthStore } from "../store/authStore";
 
-export function useLoginForm() {
+export const useLoginForm = () => {
   const setAuth = useAuthStore((state) => state.setAuth);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [inProgress, setInProgress] = useState(false);
 
   const form = useForm({
@@ -17,9 +19,9 @@ export function useLoginForm() {
       password: "",
     },
     validate: {
-      email: (value) => (EMAIL_REGEX.test(value) ? null : EMAIL_ERROR_MESSAGE),
+      email: (value) => (EMAIL_REGEX.test(value) ? null : t("auth.email_invalid")),
       password: (value) =>
-        value.length >= 3 ? null : PASSWORD_ERROR_MESSAGE,
+        value.length >= 3 ? null : t("auth.password_invalid"),
     },
   });
 

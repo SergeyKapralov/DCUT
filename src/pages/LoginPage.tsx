@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import { LoginForm } from "@/features/auth/ui/LoginForm";
 import { useAuthStore } from "@/features/auth/model/store/authStore";
 
-export function LoginPage() {
+export const LoginPage = () => {
   const isAuthorized = useAuthStore((state) => state.token !== null);
 
   if (isAuthorized) return <Navigate to="/" replace />;

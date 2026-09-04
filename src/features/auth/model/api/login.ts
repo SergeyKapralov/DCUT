@@ -5,7 +5,7 @@ export type TLoginCredentials = {
   password: string;
 };
 
-export function login(): Promise<{ token: string }> {
+export const login = (): Promise<{ token: string }> => {
   return new Promise((resolve) =>
     setTimeout(() => resolve({ token: crypto.randomUUID() }), LOGIN_DELAY_MS),
   );

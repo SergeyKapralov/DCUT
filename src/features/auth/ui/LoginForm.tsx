@@ -1,8 +1,10 @@
 import { Button, PasswordInput, TextInput } from "@mantine/core";
+import { useTranslation } from "react-i18next";
 import { useLoginForm } from "../model/hooks/useLoginForm";
 
-export function LoginForm() {
+export const LoginForm = () => {
   const { form, inProgress, handleSubmit } = useLoginForm();
+  const { t } = useTranslation();
 
   return (
     <form
@@ -10,19 +12,19 @@ export function LoginForm() {
       className="flex w-72 flex-col gap-3"
     >
       <TextInput
-        label="Email"
+        label={t("auth.email")}
         type="email"
-        placeholder="you@example.com"
+        placeholder={t("auth.email_placeholder")}
         key={form.key("email")}
         {...form.getInputProps("email")}
       />
       <PasswordInput
-        label="Пароль"
+        label={t("auth.password")}
         key={form.key("password")}
         {...form.getInputProps("password")}
       />
       <Button type="submit" loading={inProgress}>
-        Войти
+        {t("auth.submit")}
       </Button>
     </form>
   );

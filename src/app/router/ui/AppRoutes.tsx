@@ -4,7 +4,7 @@ import { Layout } from "@/features/layout/ui/Layout";
 import { HomePage } from "@/pages/HomePage";
 import { LoginPage } from "@/pages/LoginPage";
 
-export function AppRoutes() {
+export const AppRoutes = () => {
   return (
     <Layout>
       <Routes>

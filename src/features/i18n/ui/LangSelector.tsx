@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import { Menu, UnstyledButton } from "@mantine/core";
-import { SUPPORTED_LOCALES, type TLocale } from "@/app/i18n";
+import { SUPPORTED_LOCALES, type TLocale } from "../model/config";
 import { cn } from "@/shared/utils";
 import { useTrans } from "../model/useTrans";
 import ru from "@/shared/asset/flags/ru.svg";

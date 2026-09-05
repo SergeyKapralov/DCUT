@@ -5,12 +5,14 @@ import { Card } from "@/shared/ui/Card";
 import { Modal } from "@/shared/ui/Modal";
 import { useHover } from "@/shared/model/hooks/useHover";
 import { cn } from "@/shared/utils";
-import { useCarouselStore } from "@/entities/carousel/model/store/carouselStore";
-import { useCarouselAutoplay } from "../model/hooks/useCarouselAutoplay";
-import { useCarouselControls } from "../model/hooks/useCarouselControls";
-import { useCarouselViewed } from "../model/hooks/useCarouselViewed";
-import { useCarouselAdd } from "../model/hooks/useCarouselAdd";
-import { useCarouselDelete } from "../model/hooks/useCarouselDelete";
+import { useCarouselStore } from "@/entities/carousel";
+import {
+  useCarouselAdd,
+  useCarouselAutoplay,
+  useCarouselControls,
+  useCarouselDelete,
+  useCarouselViewed,
+} from "../model/hooks";
 
 export const Carousel = () => {
   const slides = useCarouselStore((state) => state.slides);

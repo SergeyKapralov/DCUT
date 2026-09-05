@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import type { EmblaCarouselType } from "embla-carousel";
-import { useCarouselStore } from "@/entities/carousel/model/store/carouselStore";
+import { useCarouselStore } from "@/entities/carousel";
 
 export const useCarouselViewed = (emblaApi: EmblaCarouselType | undefined) => {
   useEffect(() => {

@@ -1,5 +1,10 @@
 import { useTranslation } from "react-i18next";
+<<<<<<< Updated upstream
 import { Carousel } from "@/widgets/carousel/ui/Carousel";
+=======
+import { useAuthStore } from "@/features/auth";
+import { Carousel } from "@/widgets/carousel";
+>>>>>>> Stashed changes
 
 export const HomePage = () => {
   const { t } = useTranslation();

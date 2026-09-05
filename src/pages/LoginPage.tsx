@@ -1,6 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { LoginForm } from "@/features/auth/ui/LoginForm";
-import { useAuthStore } from "@/features/auth/model/store/authStore";
+import { LoginForm, useAuthStore } from "@/features/auth";
 
 export const LoginPage = () => {
   const isAuthorized = useAuthStore((state) => state.token !== null);

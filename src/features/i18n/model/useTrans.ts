@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { SUPPORTED_LOCALES, type TLocale } from "@/app/i18n";
-import { I18N_LNG_KEY } from "@/app/i18n";
+import { I18N_LNG_KEY, SUPPORTED_LOCALES, type TLocale } from "./config";
 
 export const useTrans = () => {
   const { t, i18n } = useTranslation();

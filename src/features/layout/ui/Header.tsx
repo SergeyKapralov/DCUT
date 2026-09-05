@@ -1,8 +1,13 @@
 import { AppShell } from "@mantine/core";
+<<<<<<< Updated upstream
 import { LangSelector } from "@/features/i18n/ui/LangSelector";
 import { ThemeSwitcher } from "@/features/theme/ui/ThemeSwitcher";
 import { LogoutButton } from "@/features/layout/ui/LogoutButton";
 import { useAuthStore } from "@/features/auth/model/store/authStore";
+=======
+import { LangSelector } from "@/features/i18n";
+import { ThemeSwitcher } from "@/features/theme";
+>>>>>>> Stashed changes
 import dcut from "@/shared/asset/dcut.png";
 
 export const Header = () => {

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useCarouselStore } from "@/entities/carousel/model/store/carouselStore";
-import type { TSlide } from "@/entities/carousel/model/types";
+import { useCarouselStore, type TSlide } from "@/entities/carousel";
 
 export const useCarouselDelete = () => {
   const removeSlide = useCarouselStore((state) => state.removeSlide);

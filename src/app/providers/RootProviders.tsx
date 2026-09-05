@@ -1,6 +1,6 @@
 import { createTheme, MantineProvider } from "@mantine/core";
 import type { ReactNode } from "react";
-import { useThemeStore } from "@/features/theme/model/store/themeStore";
+import { useThemeStore } from "@/features/theme";
 
 const theme = createTheme({
   fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif",

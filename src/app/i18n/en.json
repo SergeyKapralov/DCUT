@@ -26,6 +26,8 @@
   },
   "pages": {
     "home_title": "Power tool catalog",
+    "login_title": "Sign in to the catalog",
+    "login_subtitle": "Enter your email and password to continue",
     "not_found_message": "Page not found",
     "not_found_back": "Back to home"
   },

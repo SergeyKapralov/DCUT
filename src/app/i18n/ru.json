@@ -26,6 +26,8 @@
   },
   "pages": {
     "home_title": "Каталог электроинструмента",
+    "login_title": "Вход в каталог",
+    "login_subtitle": "Введите email и пароль, чтобы продолжить",
     "not_found_message": "Страница не найдена",
     "not_found_back": "На главную"
   },

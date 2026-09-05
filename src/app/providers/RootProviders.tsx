@@ -11,8 +11,11 @@ export const RootProviders = ({ children }: { children: ReactNode }) => {
   const forceColorScheme = themeMode === "auto" ? undefined : themeMode;
 
   return (
-    <MantineProvider theme={theme} forceColorScheme={forceColorScheme} defaultColorScheme="auto"
->
+    <MantineProvider
+      theme={theme}
+      forceColorScheme={forceColorScheme}
+      defaultColorScheme="auto"
+    >
       {children}
     </MantineProvider>
   );

@@ -5,7 +5,8 @@
   "type": "module",
   "sideEffects": [
     "**/*.css",
-    "**/*.{png,jpg,jpeg,svg,webp,gif,ico}"
+    "**/*.{png,jpg,jpeg,svg,webp,gif,ico}",
+    "src/app/i18n/**"
   ],
   "scripts": {
     "dev": "vite",

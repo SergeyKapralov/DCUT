@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# DCUT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SPA с имитацией аутентификации и каруселью на главной странице. Учебный проект, построенный по методологии Feature-Sliced Design (FSD).
 
-Currently, two official plugins are available:
+## Стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + TypeScript (strict)
+- Vite
+- Mantine (UI)
+- Embla Carousel
+- React Router
+- zustand (+ persist в localStorage)
+- Tailwind CSS
+- i18next (ru / en)
 
-## React Compiler
+## Возможности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Аутентификация (имитация):** страница `/login`, форма с валидацией email и пароля (не менее 3 символов), токен сохраняется в localStorage. Неавторизованный пользователь перенаправляется на `/login`, авторизованный — с логина на главную. Кнопка выхода очищает токен.
+- **Карусель на главной:** слайды с полями `id`, `title`, `annotation`, `isChecked`. Навигация стрелками и пагинацией, добавление слайда через модальное окно (обязателен `title`), удаление с подтверждением, статус просмотра. Данные сохраняются в localStorage.
+- **Переключатели темы и языка:** авто/светлая/тёмная тема, русский/английский.
 
-## Expanding the ESLint configuration
+## Структура (FSD)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+src/
+├── app/          # инициализация, роутер, провайдеры
+├── pages/        # страницы (HomePage, LoginPage, NotFoundPage)
+├── widgets/      # карусель
+├── features/     # auth, theme, i18n, layout
+├── entities/     # carousel (модель и стор)
+└── shared/       # ui, хуки, утилиты, стили
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Зависимости направлены только от верхних слоёв к нижним, импорты идут через публичные API слайсов (`index.ts`).
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+## Запуск
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install
+npm run dev      # локальный сервер
 ```
+
+## Команды
+
+| Команда                | Назначение                               |
+| ---------------------- | ---------------------------------------- |
+| `npm run dev`          | запуск dev-сервера                       |
+| `npm run build`        | сборка + генерация `dist/404.html` (SPA) |
+| `npm run preview`      | предпросмотр сборки                      |
+| `npm run lint`         | проверка ESLint                          |
+| `npm run format`       | форматирование Prettier                  |
+| `npm run format:check` | проверка форматирования                  |
+
+## Деплой
+
+Публикация на GitHub Pages автоматически: при push в `main` workflow (`.github/workflows/deploy.yml`) собирает проект и публикует артефакт. Адрес: `https://sergeykapralov.github.io/DCUT/`.
+
+Для глубоких ссылок используется фолбэк `404.html`: Vite собирает сайт с `base: "/DCUT/"`, после сборки `index.html` копируется в `dist/404.html`, и GH Pages отдаёт его для неизвестных маршрутов (React Router рендерит нужную страницу).
+
+## Теория
+
+Ответы на вопросы по TypeScript — в файле [THEORY.md](./THEORY.md).

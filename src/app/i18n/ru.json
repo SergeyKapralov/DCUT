@@ -11,7 +11,11 @@
   },
   "layout": {
     "logo_alt": "DCUT",
-    "made_by": "сделал Сергей Капралов"
+    "made_by": "сделал Сергей Капралов",
+    "logout": "Выйти",
+    "logout_confirm": "Вы действительно хотите выйти?",
+    "confirm_yes": "Да",
+    "confirm_no": "Нет"
   },
   "auth": {
     "email": "Email",
@@ -22,9 +26,7 @@
     "password_invalid": "Пароль должен быть не короче 3 символов"
   },
   "pages": {
-    "home_title": "first commit",
-    "logged_in": "Вы вошли в систему",
-    "logout": "Выйти"
+    "home_title": "first commit"
   },
   "card": {
     "checked": "Просмотрено",

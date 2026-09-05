@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useState, type SubmitEvent } from "react";
 import { useCarouselStore } from "@/entities/carousel/model/store/carouselStore";
 
 export const useCarouselAdd = () => {
@@ -17,7 +17,7 @@ export const useCarouselAdd = () => {
     setError(false);
   };
 
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const submit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     const trimmedTitle = title.trim();
     if (!trimmedTitle) {

@@ -11,11 +11,11 @@ export const ThemeSwitcher = () => {
   const activeIndex = OPTIONS.findIndex((option) => option === theme);
 
   return (
-    <div className="relative inline-flex items-center rounded-full bg-bg-secondary p-1">
+    <div className="bg-bg-secondary relative inline-flex items-center rounded-full p-1">
       <span
         aria-hidden
         className={cn(
-          "absolute top-1 left-1 h-10 w-10 rounded-full bg-fg transition-transform duration-300 ease-out",
+          "bg-fg absolute top-1 left-1 h-10 w-10 rounded-full transition-transform duration-300 ease-out",
           THUMB_POSITION[activeIndex],
         )}
       />
@@ -43,5 +43,4 @@ export const ThemeSwitcher = () => {
       })}
     </div>
   );
-}
-
+};

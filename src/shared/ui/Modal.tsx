@@ -26,7 +26,7 @@ export const Modal = ({ open, onClose, title, children }: TModalProps) => {
       <div aria-hidden className="absolute inset-0 bg-black/60" />
       <div
         ref={modalRef}
-        className="border-border relative w-full max-w-sm rounded-lg border bg-card p-5 text-fg shadow-xl"
+        className="border-border bg-card text-fg relative w-full max-w-sm rounded-lg border p-5 shadow-xl"
       >
         <div className="mb-4 flex items-center justify-between gap-4">
           {title && <h2 className="font-semibold">{title}</h2>}
@@ -34,7 +34,7 @@ export const Modal = ({ open, onClose, title, children }: TModalProps) => {
             type="button"
             onClick={onClose}
             aria-label={t("modal.close")}
-            className="hover:bg-bg-secondary -m-1 flex size-8 shrink-0 items-center justify-center rounded-full text-fg-secondary transition"
+            className="hover:bg-bg-secondary text-fg-secondary -m-1 flex size-8 shrink-0 items-center justify-center rounded-full transition"
           >
             <X size={20} aria-hidden />
           </button>

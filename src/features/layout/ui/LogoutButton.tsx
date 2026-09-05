@@ -3,7 +3,7 @@ import { DoorClosed, DoorOpen } from "lucide-react";
 import { Button } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { Modal } from "@/shared/ui/Modal";
-import { useAuthStore } from "@/features/auth/model/store/authStore";
+import { useAuthStore } from "@/features/auth";
 
 export const LogoutButton = () => {
   const logout = useAuthStore((state) => state.logout);
@@ -21,7 +21,7 @@ export const LogoutButton = () => {
         type="button"
         aria-label={t("layout.logout")}
         onClick={() => setConfirmOpen(true)}
-        className="group flex h-10 w-10 items-center justify-center rounded-full text-fg-secondary transition hover:bg-bg-secondary hover:text-fg"
+        className="group text-fg-secondary hover:bg-bg-secondary hover:text-fg flex h-10 w-10 items-center justify-center rounded-full transition"
       >
         <span className="relative block h-6 w-6">
           <DoorClosed
@@ -42,7 +42,9 @@ export const LogoutButton = () => {
         title={t("layout.logout")}
       >
         <div className="flex flex-col gap-4">
-          <p className="text-sm text-fg-secondary">{t("layout.logout_confirm")}</p>
+          <p className="text-fg-secondary text-sm">
+            {t("layout.logout_confirm")}
+          </p>
           <div className="flex justify-end gap-2">
             <Button variant="subtle" onClick={() => setConfirmOpen(false)}>
               {t("layout.confirm_no")}

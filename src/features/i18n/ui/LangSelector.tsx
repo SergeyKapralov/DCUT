@@ -14,10 +14,10 @@ const Flag = ({ locale }: { locale: TLocale }) => {
       aria-hidden
       src={FLAGS[locale]}
       alt=""
-      className="shadow-sm h-3.5 w-5 rounded-[2px]"
+      className="h-3.5 w-5 rounded-xs shadow-sm"
     />
   );
-}
+};
 
 export const LangSelector = () => {
   const { t, selectedLang, selectLang } = useTrans();
@@ -27,7 +27,7 @@ export const LangSelector = () => {
       <Menu.Target>
         <UnstyledButton
           aria-label={t("lang.select")}
-          className="text-fg hover:underline flex items-center gap-2 text-sm"
+          className="text-fg flex items-center gap-2 text-sm hover:underline"
         >
           <Flag locale={selectedLang} />
           {t(`lang.${selectedLang}`)}
@@ -55,4 +55,4 @@ export const LangSelector = () => {
       </Menu.Dropdown>
     </Menu>
   );
-}
+};

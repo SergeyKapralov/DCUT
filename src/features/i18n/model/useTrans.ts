@@ -12,4 +12,4 @@ export const useTrans = () => {
   };
 
   return { t, selectedLang, selectLang };
-}
+};

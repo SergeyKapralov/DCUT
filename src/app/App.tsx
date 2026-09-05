@@ -10,6 +10,6 @@ const App = () => {
       </BrowserRouter>
     </RootProviders>
   );
-}
+};
 
 export default App;

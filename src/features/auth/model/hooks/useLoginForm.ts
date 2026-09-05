@@ -19,7 +19,8 @@ export const useLoginForm = () => {
       password: "",
     },
     validate: {
-      email: (value) => (EMAIL_REGEX.test(value) ? null : t("auth.email_invalid")),
+      email: (value) =>
+        EMAIL_REGEX.test(value) ? null : t("auth.email_invalid"),
       password: (value) =>
         value.length >= 3 ? null : t("auth.password_invalid"),
     },
@@ -37,4 +38,4 @@ export const useLoginForm = () => {
   };
 
   return { form, inProgress, handleSubmit };
-}
+};

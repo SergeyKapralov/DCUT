@@ -7,10 +7,10 @@ export const LoginPage = () => {
   if (isAuthorized) return <Navigate to="/" replace />;
 
   return (
-    <div className="flex w-full flex-col items-center gap-8 py-8 text-fg">
-      <div className="border-border rounded-lg border bg-card p-6">
+    <div className="text-fg flex w-full flex-col items-center gap-8 py-8">
+      <div className="border-border bg-card rounded-lg border p-6">
         <LoginForm />
       </div>
     </div>
   );
-}
+};

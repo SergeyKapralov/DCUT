@@ -28,4 +28,4 @@ export const LoginForm = () => {
       </Button>
     </form>
   );
-}
+};

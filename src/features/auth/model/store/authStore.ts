@@ -5,17 +5,14 @@ const initialState: TAuthState = {
   token: null,
 };
 
-export const useAuthStore = createPersistedStore<TAuthStore>(
-  "auth",
-  (set) => ({
-    ...initialState,
-    setAuth: (token) =>
-      set((state) => {
-        state.token = token;
-      }),
-    logout: () =>
-      set((state) => {
-        state.token = null;
-      }),
-  }),
-);
+export const useAuthStore = createPersistedStore<TAuthStore>("auth", (set) => ({
+  ...initialState,
+  setAuth: (token) =>
+    set((state) => {
+      state.token = token;
+    }),
+  logout: () =>
+    set((state) => {
+      state.token = null;
+    }),
+}));

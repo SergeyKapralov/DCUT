@@ -16,4 +16,4 @@ export const AppRoutes = () => {
       </Routes>
     </Layout>
   );
-}
+};

@@ -5,4 +5,4 @@ export const RequireAuth = () => {
   const isAuthorized = useAuthStore((state) => state.token !== null);
 
   return isAuthorized ? <Outlet /> : <Navigate to="/login" replace />;
-}
+};

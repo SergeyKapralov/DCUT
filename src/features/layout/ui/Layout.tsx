@@ -17,4 +17,4 @@ export const Layout = ({ children }: { children: ReactNode }) => {
       <Footer />
     </AppShell>
   );
-}
+};

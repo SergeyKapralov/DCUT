@@ -44,7 +44,7 @@ export const Carousel = () => {
           aria-label="Previous"
           disabled={!canPrev}
           onClick={scrollPrev}
-          className="bg-bg-secondary border-border text-fg rounded-full p-2 transition opacity-100 disabled:cursor-not-allowed disabled:opacity-40"
+          className="bg-bg-secondary border-border text-fg rounded-full p-2 opacity-100 transition disabled:cursor-not-allowed disabled:opacity-40"
         >
           <ChevronLeft size={20} aria-hidden />
         </button>
@@ -55,7 +55,10 @@ export const Carousel = () => {
         >
           <div className="flex gap-4">
             {slides.map((slide) => (
-              <div key={slide.id} className="min-w-0 flex-[0_0_18rem]">
+              <div
+                key={slide.id}
+                className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_18rem]"
+              >
                 <Card
                   title={slide.title}
                   description={slide.annotation}
@@ -71,7 +74,7 @@ export const Carousel = () => {
           aria-label="Next"
           disabled={!canNext}
           onClick={scrollNext}
-          className="bg-bg-secondary border-border text-fg rounded-full p-2 transition opacity-100 disabled:cursor-not-allowed disabled:opacity-40"
+          className="bg-bg-secondary border-border text-fg rounded-full p-2 opacity-100 transition disabled:cursor-not-allowed disabled:opacity-40"
         >
           <ChevronRight size={20} aria-hidden />
         </button>
@@ -90,10 +93,17 @@ export const Carousel = () => {
           />
         ))}
       </div>
-      <Button leftSection={<Plus size={16} aria-hidden />} onClick={add.openModal}>
+      <Button
+        leftSection={<Plus size={16} aria-hidden />}
+        onClick={add.openModal}
+      >
         {t("carousel.add_slide")}
       </Button>
-      <Modal open={add.open} onClose={add.closeModal} title={t("carousel.add_slide")}>
+      <Modal
+        open={add.open}
+        onClose={add.closeModal}
+        title={t("carousel.add_slide")}
+      >
         <form onSubmit={add.submit} className="flex flex-col gap-4">
           <TextInput
             label={t("carousel.title")}
@@ -126,7 +136,9 @@ export const Carousel = () => {
         title={t("carousel.delete_title")}
       >
         <div className="flex flex-col gap-4">
-          <p className="text-sm text-fg-secondary">{t("carousel.delete_confirm")}</p>
+          <p className="text-fg-secondary text-sm">
+            {t("carousel.delete_confirm")}
+          </p>
           <div className="flex justify-end gap-2">
             <Button variant="subtle" onClick={cancelDelete}>
               {t("carousel.confirm_no")}

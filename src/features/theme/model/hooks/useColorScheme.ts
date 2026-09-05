@@ -6,8 +6,9 @@ const getSystemColorScheme = (): "light" | "dark" =>
 
 export const useColorScheme = (): "light" | "dark" => {
   const theme = useThemeStore((state) => state.theme);
-  const [systemColorScheme, setSystemColorScheme] =
-    useState<"light" | "dark">(getSystemColorScheme);
+  const [systemColorScheme, setSystemColorScheme] = useState<"light" | "dark">(
+    getSystemColorScheme,
+  );
 
   useEffect(() => {
     if (theme !== "auto") return;

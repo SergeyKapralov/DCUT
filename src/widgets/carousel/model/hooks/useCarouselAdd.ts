@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
 import { useState, type SubmitEvent } from "react";
-import { useCarouselStore } from "@/entities/carousel/model/store/carouselStore";
-=======
-import { useState, type FormEvent } from "react";
 import { useCarouselStore } from "@/entities/carousel";
->>>>>>> Stashed changes
 
 export const useCarouselAdd = () => {
   const addSlide = useCarouselStore((state) => state.addSlide);

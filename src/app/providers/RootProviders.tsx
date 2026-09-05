@@ -15,4 +15,4 @@ export const RootProviders = ({ children }: { children: ReactNode }) => {
       {children}
     </MantineProvider>
   );
-}
+};

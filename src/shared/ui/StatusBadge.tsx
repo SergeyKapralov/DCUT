@@ -10,11 +10,15 @@ export const StatusBadge = ({ isChecked }: { isChecked: boolean }) => {
     <Badge
       radius="xl"
       className={cn(
-        "w-fit text-xs font-normal normal-case tracking-normal",
+        "w-fit text-xs font-normal tracking-normal normal-case",
         isChecked ? "bg-fg text-bg" : "bg-bg-secondary text-fg-secondary",
       )}
       leftSection={
-        isChecked ? <CheckCircle2 size={14} aria-hidden /> : <Circle size={14} aria-hidden />
+        isChecked ? (
+          <CheckCircle2 size={14} aria-hidden />
+        ) : (
+          <Circle size={14} aria-hidden />
+        )
       }
     >
       {isChecked ? t("card.checked") : t("card.not_checked")}

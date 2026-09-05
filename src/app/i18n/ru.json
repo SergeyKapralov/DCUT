@@ -25,7 +25,9 @@
     "password_invalid": "Пароль должен быть не короче 3 символов"
   },
   "pages": {
-    "home_title": "first commit"
+    "home_title": "Каталог электроинструмента",
+    "not_found_message": "Страница не найдена",
+    "not_found_back": "На главную"
   },
   "card": {
     "checked": "Просмотрено",

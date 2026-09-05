@@ -1,8 +1,9 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { RequireAuth } from "@/features/auth";
 import { Layout } from "@/features/layout";
 import { HomePage } from "@/pages/HomePage";
 import { LoginPage } from "@/pages/LoginPage";
+import { NotFoundPage } from "@/pages/NotFoundPage";
 
 export const AppRoutes = () => {
   return (
@@ -10,7 +11,7 @@ export const AppRoutes = () => {
       <Routes>
         <Route element={<RequireAuth />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
       </Routes>

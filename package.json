@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "node --input-type=module -e \"import { copyFileSync } from 'node:fs'; copyFileSync('dist/index.html', 'dist/404.html')\"",
     "lint": "eslint .",
     "format": "prettier . --write",
     "format:check": "prettier . --check",

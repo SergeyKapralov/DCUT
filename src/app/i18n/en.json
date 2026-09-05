@@ -25,7 +25,9 @@
     "password_invalid": "Password must be at least 3 characters"
   },
   "pages": {
-    "home_title": "first commit"
+    "home_title": "Power tool catalog",
+    "not_found_message": "Page not found",
+    "not_found_back": "Back to home"
   },
   "card": {
     "checked": "Checked",

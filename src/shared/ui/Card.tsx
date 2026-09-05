@@ -40,7 +40,7 @@ export const Card = ({ title, description, isChecked, onDelete }: TCardProps) =>
           </button>
         )}
       </div>
-      <div className="min-h-0 max-h-40 grow overflow-y-auto pr-1 [scrollbar-width:thin]">
+      <div className="min-h-0 max-h-40 grow overflow-y-auto break-words pr-1 [scrollbar-width:thin]">
         <Text size="sm" className="text-fg-secondary">
           {description}
         </Text>

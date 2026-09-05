@@ -1,4 +1,4 @@
-import { Button, TextInput } from "@mantine/core";
+import { Button, TextInput, Textarea } from "@mantine/core";
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Card } from "@/shared/ui/Card";
@@ -100,11 +100,15 @@ export const Carousel = () => {
             onChange={(event) => add.setTitle(event.currentTarget.value)}
             error={add.error ? t("carousel.title_required") : undefined}
           />
-          <TextInput
+          <Textarea
             label={t("carousel.annotation")}
             placeholder={t("carousel.annotation_placeholder")}
+            autosize
+            minRows={2}
+            maxRows={5}
             value={add.annotation}
             onChange={(event) => add.setAnnotation(event.currentTarget.value)}
+            classNames={{ input: "break-words" }}
           />
           <div className="flex justify-end gap-2">
             <Button variant="subtle" onClick={add.closeModal}>

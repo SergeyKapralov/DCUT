@@ -11,7 +11,11 @@
   },
   "layout": {
     "logo_alt": "DCUT",
-    "made_by": "Made by Sergei Kapralov"
+    "made_by": "Made by Sergei Kapralov",
+    "logout": "Sign out",
+    "logout_confirm": "Are you sure you want to sign out?",
+    "confirm_yes": "Yes",
+    "confirm_no": "No"
   },
   "auth": {
     "email": "Email",
@@ -22,9 +26,7 @@
     "password_invalid": "Password must be at least 3 characters"
   },
   "pages": {
-    "home_title": "first commit",
-    "logged_in": "You are logged in",
-    "logout": "Sign out"
+    "home_title": "first commit"
   },
   "card": {
     "checked": "Checked",

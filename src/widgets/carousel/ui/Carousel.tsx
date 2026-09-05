@@ -111,6 +111,8 @@ export const Carousel = () => {
             value={add.title}
             onChange={(event) => add.setTitle(event.currentTarget.value)}
             error={add.error ? t("carousel.title_required") : undefined}
+            size="lg"
+            styles={{ input: { fontSize: 16 } }}
           />
           <Textarea
             label={t("carousel.annotation")}
@@ -120,6 +122,7 @@ export const Carousel = () => {
             maxRows={5}
             value={add.annotation}
             onChange={(event) => add.setAnnotation(event.currentTarget.value)}
+            styles={{ input: { fontSize: 16 } }}
             classNames={{ input: "break-words" }}
           />
           <div className="flex justify-end gap-2">

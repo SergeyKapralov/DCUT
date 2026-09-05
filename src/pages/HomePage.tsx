@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useAuthStore } from "@/features/auth/model/store/authStore";
+import { Carousel } from "@/widgets/carousel/ui/Carousel";
 
 export const HomePage = () => {
   const logout = useAuthStore((state) => state.logout);
@@ -14,6 +15,7 @@ export const HomePage = () => {
           {t("pages.logout")}
         </button>
       </div>
+      <Carousel />
     </div>
   );
-}
+};

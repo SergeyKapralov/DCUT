@@ -111,8 +111,9 @@ export const Carousel = () => {
             value={add.title}
             onChange={(event) => add.setTitle(event.currentTarget.value)}
             error={add.error ? t("carousel.title_required") : undefined}
-            size="lg"
-            styles={{ input: { fontSize: 16 } }}
+            size="md"
+            styles={{ input: { fontSize: "1rem" } }}
+            classNames={{ input: "sm:[&]:!text-sm" }}
           />
           <Textarea
             label={t("carousel.annotation")}
@@ -122,8 +123,8 @@ export const Carousel = () => {
             maxRows={5}
             value={add.annotation}
             onChange={(event) => add.setAnnotation(event.currentTarget.value)}
-            styles={{ input: { fontSize: 16 } }}
-            classNames={{ input: "break-words" }}
+            styles={{ input: { fontSize: "1rem" } }}
+            classNames={{ input: "sm:[&]:!text-sm break-words" }}
           />
           <div className="flex justify-end gap-2">
             <Button variant="subtle" onClick={add.closeModal}>

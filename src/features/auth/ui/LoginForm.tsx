@@ -16,15 +16,17 @@ export const LoginForm = () => {
         type="email"
         placeholder={t("auth.email_placeholder")}
         key={form.key("email")}
-        size="lg"
-        styles={{ input: { fontSize: 16 } }}
+        size="md"
+        styles={{ input: { fontSize: "1rem" } }}
+        classNames={{ input: "sm:[&]:!text-sm" }}
         {...form.getInputProps("email")}
       />
       <PasswordInput
         label={t("auth.password")}
         key={form.key("password")}
-        size="lg"
-        styles={{ input: { fontSize: 16 } }}
+        size="md"
+        styles={{ input: { fontSize: "1rem" } }}
+        classNames={{ input: "sm:[&]:!text-sm" }}
         {...form.getInputProps("password")}
       />
       <Button type="submit" loading={inProgress}>

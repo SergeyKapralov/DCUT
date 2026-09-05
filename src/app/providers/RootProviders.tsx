@@ -1,13 +1,17 @@
-import { MantineProvider } from "@mantine/core";
+import { createTheme, MantineProvider } from "@mantine/core";
 import type { ReactNode } from "react";
 import { useThemeStore } from "@/features/theme/model/store/themeStore";
 
+const theme = createTheme({
+  fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif",
+});
+
 export const RootProviders = ({ children }: { children: ReactNode }) => {
-  const theme = useThemeStore((state) => state.theme);
-  const forceColorScheme = theme === "auto" ? undefined : theme;
+  const themeMode = useThemeStore((state) => state.theme);
+  const forceColorScheme = themeMode === "auto" ? undefined : themeMode;
 
   return (
-    <MantineProvider forceColorScheme={forceColorScheme}>
+    <MantineProvider theme={theme} forceColorScheme={forceColorScheme}>
       {children}
     </MantineProvider>
   );

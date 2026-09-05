@@ -31,6 +31,9 @@
 }
 
 @theme {
+  /* font */
+  --font-sans: "Commissioner", ui-sans-serif, system-ui, sans-serif;
+
   /* common colors */
   --color-element: #1046a4;
   --color-highlight: #1accba;

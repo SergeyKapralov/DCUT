@@ -25,5 +25,26 @@
     "home_title": "first commit",
     "logged_in": "Вы вошли в систему",
     "logout": "Выйти"
+  },
+  "card": {
+    "checked": "Просмотрено",
+    "not_checked": "Не просмотрено",
+    "delete": "Удалить"
+  },
+  "carousel": {
+    "add_slide": "Добавить слайд",
+    "title": "Название",
+    "title_placeholder": "Название слайда",
+    "annotation": "Описание",
+    "annotation_placeholder": "Краткое описание",
+    "add_submit": "Добавить",
+    "title_required": "Название обязательно",
+    "delete_title": "Удалить слайд",
+    "delete_confirm": "Вы уверены, что хотите удалить?",
+    "confirm_yes": "Да",
+    "confirm_no": "Нет"
+  },
+  "modal": {
+    "close": "Закрыть"
   }
 }

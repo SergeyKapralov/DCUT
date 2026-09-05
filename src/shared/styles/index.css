@@ -3,3 +3,15 @@
 @import "@mantine/core/styles.layer.css" layer(mantine);
 @import "tailwindcss";
 @import "colorScheme.css";
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+@supports (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
